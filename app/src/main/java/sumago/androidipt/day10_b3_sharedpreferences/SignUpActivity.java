@@ -31,7 +31,7 @@ public class SignUpActivity extends AppCompatActivity {
         spHelper = new SharedPrefHelper(this);
         if(spHelper.getIsSignedIn()){
             Intent i = new Intent(SignUpActivity.this, HomeActivity.class);
-            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(i);
         }
 
@@ -54,7 +54,6 @@ public class SignUpActivity extends AppCompatActivity {
                 Toast.makeText(this, "User Registered", Toast.LENGTH_SHORT).show();
 
                 Intent i = new Intent(SignUpActivity.this, SignInActivity.class);
-                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(i);
             }
         });

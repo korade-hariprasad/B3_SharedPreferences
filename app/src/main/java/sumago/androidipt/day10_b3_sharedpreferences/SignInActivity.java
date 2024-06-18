@@ -41,7 +41,7 @@ public class SignInActivity extends AppCompatActivity {
             if(loginSuccess()){
                 spHelper.addIsSignedIn(true);
                 Intent i = new Intent(SignInActivity.this, HomeActivity.class);
-                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(i);
             }else{
                 Toast.makeText(this, "User Credentials does not match", Toast.LENGTH_SHORT).show();

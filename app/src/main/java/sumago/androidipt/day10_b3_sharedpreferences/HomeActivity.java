@@ -30,7 +30,7 @@ public class HomeActivity extends AppCompatActivity {
         btn.setOnClickListener(v->{
             spHelper.clear();
             Intent i = new Intent(HomeActivity.this, SignUpActivity.class);
-            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(i);
         });
     }
